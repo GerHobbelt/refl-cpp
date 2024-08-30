@@ -97,6 +97,12 @@ REFL_AUTO(type(model::User), field(id), field(email))
 // from the value_proxy's invoke_impl method.
 using User = value_proxy<model::User>;
 
+
+#if defined(BUILD_MONOLITHIC)
+#define main     refl_example_proxy_main
+#endif
+
+extern "C"
 int main()
 {
     User user{{ 10 }};
@@ -113,4 +119,6 @@ int main()
 
     static_assert(std::is_same_v<decltype(user.email()), const std::string&>);
     static_assert(std::is_same_v<decltype(user.email("")), void>);
+
+		return 0;
 }

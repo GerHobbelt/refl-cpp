@@ -80,6 +80,12 @@ REFL_AUTO
 // -> zero-cost introspection in C++17 🔥
 static_assert(refl::reflect<User>().members.size == 4);
 
+
+#if defined(BUILD_MONOLITHIC)
+#define main     refl_example_builders_main
+#endif
+
+extern "C"
 int main()
 {
     // User-defined builder-style factories for any reflectable type! 🔥
@@ -91,4 +97,6 @@ int main()
         .build();
 
     assert(user.email == "jdoe@example.com");
+
+		return 0;
 }

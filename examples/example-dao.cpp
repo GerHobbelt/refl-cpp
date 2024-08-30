@@ -100,6 +100,12 @@ constexpr auto make_sql_create_table()
     return "CREATE TABLE " + tbl_name + " (\n" + fields + "\n);";
 }
 
+
+#if defined(BUILD_MONOLITHIC)
+#define main     refl_example_dao_main
+#endif
+
+extern "C"
 int main()
 {
     // sql is of type const_string<N> where N is the length of the
@@ -107,4 +113,6 @@ int main()
     constexpr auto sql = make_sql_create_table<User>();
     std::cout << sql << "\n";
     std::cout << "Number of characters: " << sizeof(sql) - 1 << "\n";
+
+		return 0;
 }

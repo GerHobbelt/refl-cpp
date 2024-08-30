@@ -105,6 +105,12 @@ REFL_AUTO(
     field(health)
 )
 
+
+#if defined(BUILD_MONOLITHIC)
+#define main     refl_example_custom_rtti_main
+#endif
+
+extern "C"
 int main()
 {
     FirstPersonController fpc;
@@ -113,4 +119,6 @@ int main()
 
     // access the name through our TypeInfo object
     assert(pawnTypeInfo.Name() == "FirstPersonController");
+
+		return 0;
 }

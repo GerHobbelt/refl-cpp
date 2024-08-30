@@ -851,7 +851,15 @@ REFL_TYPE(LargePod)
 #endif // PROPERTIES_2X
 REFL_END
 
+
+#if defined(BUILD_MONOLITHIC)
+#define main     refl_benchmark_large_pod_search_main
+#endif
+
+extern "C"
 int main()
 {
     ProcessClass<LargePod>();
+
+		return 0;
 }

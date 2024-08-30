@@ -207,6 +207,12 @@ const char* view_template = R"<?>(
     <StackPanel orientation="horizontal"> Hello, World! </StackPanel>
 )<?>";
 
+
+#if defined(BUILD_MONOLITHIC)
+#define main     refl_example_binding_main
+#endif
+
+extern "C"
 int main()
 {
     std::basic_regex<char> xmlRegex(R"raw(<(\w+)([^>]*)>([\s\S]*)</\s*\1\s*>)raw");
@@ -247,4 +253,6 @@ int main()
     }
 
     std::cout << std::endl;
+
+		return 0;
 }

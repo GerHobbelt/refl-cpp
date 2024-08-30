@@ -153,6 +153,12 @@ REFL_AUTO(
 )
 /********************************/
 
+
+#if defined(BUILD_MONOLITHIC)
+#define main     refl_example_struct_of_arrays_main
+#endif
+
+extern "C"
 int main()
 {
     struct_of_arrays<color> colors;
@@ -166,4 +172,6 @@ int main()
     for (size_t i = 0; i < colors.size(); i++) {
         std::cout << "r=" << red_chan[i] << ",g=" << green_chan[i] << ",b=" << blue_chan[i] << "\n";
     }
+
+		return 0;
 }

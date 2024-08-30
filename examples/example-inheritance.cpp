@@ -62,6 +62,12 @@ void print_bases()
     }
 }
 
+
+#if defined(BUILD_MONOLITHIC)
+#define main     refl_example_inheritance_main
+#endif
+
+extern "C"
 int main()
 {
     print_bases<Animal>();
@@ -75,4 +81,6 @@ int main()
         refl::runtime::debug(std::cout, member(d));
         std::cout << "\n";
     });
+
+		return 0;
 }

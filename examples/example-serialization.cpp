@@ -65,6 +65,12 @@ REFL_TYPE(Point, debug(debug_point), bases<>)
     REFL_FUNC(magnitude)
 REFL_END
 
+
+#if defined(BUILD_MONOLITHIC)
+#define main     refl_example_serialization_main
+#endif
+
+extern "C"
 int main()
 {
     std::cout << "Custom serialization: ";
@@ -79,4 +85,6 @@ int main()
 	refl::runtime::debug(std::cout, pts);
 
     std::cout << std::endl;
+
+		return 0;
 }

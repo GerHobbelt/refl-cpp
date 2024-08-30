@@ -121,6 +121,12 @@ REFL_AUTO(
     func(pages, property()), func(set_pages, property())
 )
 
+
+#if defined(BUILD_MONOLITHIC)
+#define main     refl_example_partials_main
+#endif
+
+extern "C"
 int main()
 {
     Book book("Title", "Author", 0);
@@ -136,4 +142,6 @@ int main()
     std::cout << "title of book after update = " << book.title() << '\n';
 
     std::cout << std::endl;
+
+		return 0;
 }
