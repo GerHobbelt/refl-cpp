@@ -86,7 +86,7 @@ static_assert(refl::reflect<User>().members.size == 4);
 #endif
 
 extern "C"
-int main()
+int main(void)
 {
     // User-defined builder-style factories for any reflectable type! 🔥
     const User user = builder<User>(10)

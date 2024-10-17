@@ -106,7 +106,7 @@ constexpr auto make_sql_create_table()
 #endif
 
 extern "C"
-int main()
+int main(void)
 {
     // sql is of type const_string<N> where N is the length of the
     // compile-time string.

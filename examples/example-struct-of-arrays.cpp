@@ -159,7 +159,7 @@ REFL_AUTO(
 #endif
 
 extern "C"
-int main()
+int main(void)
 {
     struct_of_arrays<color> colors;
     colors.push_back(color{ .0f, .5f, .5f });

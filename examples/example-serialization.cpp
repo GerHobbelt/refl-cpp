@@ -71,7 +71,7 @@ REFL_END
 #endif
 
 extern "C"
-int main()
+int main(void)
 {
     std::cout << "Custom serialization: ";
     serialize(std::cout, Point{ 1, 1 });

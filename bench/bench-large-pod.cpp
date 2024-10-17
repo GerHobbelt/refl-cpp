@@ -854,7 +854,7 @@ REFL_END
 #endif
 
 extern "C"
-int main()
+int main(void)
 {
     ProcessClass<LargePod>();
 

@@ -127,7 +127,7 @@ REFL_AUTO(
 #endif
 
 extern "C"
-int main()
+int main(void)
 {
     Book book("Title", "Author", 0);
 

@@ -111,7 +111,7 @@ REFL_AUTO(
 #endif
 
 extern "C"
-int main()
+int main(void)
 {
     FirstPersonController fpc;
     Pawn& pawn = fpc; // refer through parent type

@@ -103,7 +103,7 @@ using User = value_proxy<model::User>;
 #endif
 
 extern "C"
-int main()
+int main(void)
 {
     User user{{ 10 }};
 

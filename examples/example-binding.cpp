@@ -213,7 +213,7 @@ const char* view_template = R"<?>(
 #endif
 
 extern "C"
-int main()
+int main(void)
 {
     std::basic_regex<char> xmlRegex(R"raw(<(\w+)([^>]*)>([\s\S]*)</\s*\1\s*>)raw");
 

@@ -68,7 +68,7 @@ void print_bases()
 #endif
 
 extern "C"
-int main()
+int main(void)
 {
     print_bases<Animal>();
     print_bases<Wolf>();
